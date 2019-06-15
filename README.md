@@ -10,7 +10,7 @@
 1. `sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa`
 1. `sudo apt-get update`
 1. `sudo apt-get install gcc-arm-none-eabi`
-1. `arm-none-eabi-gcc -v`查询版本号(非必需操作，仅用来确认gcc版本)
+1. `arm-none-eabi-gcc -v`查询版本号(非必需操作)
 
 它将安装 `gcc-arm-none-eabi` gcc version 6.3.1 20170620
 
