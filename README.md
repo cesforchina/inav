@@ -5,6 +5,8 @@
 1. 使用来自Internet的任何指南启用WSL（Windows Subsystem for Linux）
 1. 从Windows应用商店安装 `Ubuntu`
 1. 开始`Ubuntu`并运行:
+1. `git clone https://github.com/cesforchina/inav-2.1.0.git`
+1. `cd inav-2.1.0`
 1. `sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa`
 1. `sudo apt-get update`
 1. `sudo apt-get install gcc-arm-embedded make ruby`
