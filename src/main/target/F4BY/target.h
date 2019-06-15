@@ -116,7 +116,7 @@
 #define SPI2_CLOCK_LEADING_EDGE
 
 #define USE_SPI_DEVICE_3
-#define SPI3_NSS_PIN            PA15
+#define SPI3_NSS_PIN            NONE
 #define SPI3_SCK_PIN            PB3
 #define SPI3_MISO_PIN           PB4
 #define SPI3_MOSI_PIN           PB5
