@@ -25,4 +25,4 @@
 `C:\用户\你的WIN10用户名\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_***\LocalState\rootfs\home\你的WSL用户名\inav\obj`  
 文件夹中的内容，即上次编译相关的文件。
 
-![WSL编译F4BY](https://github.com/cesforchina/inav-2.1.0/blob/master/docs/development/assets/WSL%E7%BC%96%E8%AF%91F4BY.png)
+![WSL编译F4BY](https://github.com/cesforchina/inav/blob/inav_2.2.0/docs/development/assets/WSL%E7%BC%96%E8%AF%91F4BY.png)
