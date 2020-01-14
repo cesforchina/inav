@@ -1,28 +1,89 @@
-# 在Windows 10中使用Linux子系统构建
+# INAV - navigation capable flight controller
 
-用于Windows 10的Linux子系统可能是在Windows 10下构建INAV的最简单方法。
+![INAV](http://static.rcgroups.net/forums/attachments/6/1/0/3/7/6/a9088858-102-inav.png)
+![Travis CI status](https://travis-ci.org/iNavFlight/inav.svg?branch=master)
 
-1. 使用来自Internet的任何指南启用WSL（Windows Subsystem for Linux）
-1. 从Windows应用商店安装 `Ubuntu`
-1. 打开`Ubuntu`并运行:
-1. `git clone https://github.com/cesforchina/inav.git`克隆我的inav-2.2.0储存库
-1. `cd inav`进入项目文件夹
-1. `sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa`
-1. `sudo apt-get update`
-1. `sudo apt-get install gcc-arm-embedded make ruby`
-1. `arm-none-eabi-gcc -v`查询版本号(非必需操作)
+## Features
 
-它将安装 `gcc-arm-none-eabi` gcc version 6.3.1 20170620
+* Outstanding navigation performance out of the box
+* Position Hold, Altitude Hold, Return To Home and Missions
+* Excellent support for fixed wing UAVs: airplanes, flying wings 
+* Pitot tube support
+* Rangefinder support (sonar and laser)
+* Oneshot and Multishot ESC support.
+* Blackbox flight recorder logging (to onboard flash or external SD card).
+* Lux's new PID (uses float values internally, resistant to looptime variation).
+* Simultaneous Bluetooth configuration and OSD.
+* LTM Telemetry.
+* Smartport Telemetry.
+* RSSI via ADC - Uses ADC to read PWM RSSI signals, tested with FrSky D4R-II and X8R.
+* OLED Displays - Display information on: Battery voltage, profile, rate profile, version, sensors, RC, etc.
+* In-flight manual PID tuning and rate adjustment.
+* Rate profiles and in-flight selection of them.
+* Multiple simultaneous telemetry providers.
+* Configurable serial ports for Serial RX, Telemetry, MSP, GPS - Use most devices on any port, softserial too.
+* Multi-color RGB LED Strip support (each LED can be a different color using variable length WS2811 Addressable RGB strips - use for Orientation Indicators, Low Battery Warning, Flight Mode Status, etc)
+* PIDs from CF/BF can be used in INAV, no need to retune for INAV
+* And many more!
 
-从这时起，可以使用以下命令构建INAV
+For a list of features, changes and some discussion please review consult the releases [page](https://github.com/iNavFlight/inav/releases) and the documentation.
 
-`make TARGET={TARGET_NAME}`
+## Tools
 
-当然，将`{TARGET_NAME}`替换为您要编译的目标，编译后的固件在WSL文件区中  
-`C:\用户\你的WIN10用户名\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_***\LocalState\rootfs\home\你的WSL用户名\inav\obj`  
+### INAV Configurator
 
-同理也可以对你的储存库进行以上操作，可以避开因为不熟悉github操作却使用官方储存库导致的各种问题。有关项目的修改建议在WSL外部进行，通过`GitHub Desktop`克隆到本地后，进行修改，上传合并等，然后在WSL中`cd inav***`进入你的项目文件夹，进行`git pull`操作，即从储存库中拉取更新到WSL项目文件夹中。在编译过某目标板之后，下次编译时应清除  
-`C:\用户\你的WIN10用户名\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_***\LocalState\rootfs\home\你的WSL用户名\inav\obj`  
-文件夹中的内容，即上次编译相关的文件。
+Official tool for INAV can be downloaded [here](https://github.com/iNavFlight/inav-configurator/releases). It can be run on Windows, MacOS and Linux machines and standalone application.  
 
-![WSL编译F4BY](https://github.com/cesforchina/inav/blob/inav_2.2.0/docs/development/assets/WSL%E7%BC%96%E8%AF%91F4BY.png)
+### INAV Blackbox Explorer
+
+Tool for Blackbox logs analysis is available [here](https://github.com/iNavFlight/blackbox-log-viewer/releases)
+
+### Telemetry screen for OpenTX
+
+Users of FrSky Taranis X9 and Q X7 can use INAV Lua Telemetry screen created by @teckel12 . Software and installation instruction are available here: [https://github.com/iNavFlight/LuaTelemetry](https://github.com/iNavFlight/LuaTelemetry)
+
+## Installation
+
+See: https://github.com/iNavFlight/inav/blob/master/docs/Installation.md
+
+## Documentation, support and learning resources
+* [Fixed Wing Guide](docs/INAV_Fixed_Wing_Setup_Guide.pdf)
+* [Autolaunch Guide](docs/INAV_Autolaunch.pdf)
+* [Modes Guide](docs/INAV_Modes.pdf)
+* [Wing Tuning Masterclass](docs/INAV_Wing_Tuning_Masterclass.pdf)
+* [Official documentation](https://github.com/iNavFlight/inav/tree/master/docs)
+* [Official Wiki](https://github.com/iNavFlight/inav/wiki)
+* [INAV Official on Telegram](https://t.me/INAVFlight)
+* [INAV Official on Facebook](https://www.facebook.com/groups/INAVOfficial)
+* [RC Groups Support](https://www.rcgroups.com/forums/showthread.php?2495732-Cleanflight-iNav-(navigation-rewrite)-project)
+* [Video series by Painless360](https://www.youtube.com/playlist?list=PLYsWjANuAm4qdXEGFSeUhOZ10-H8YTSnH)
+* [Video series by Paweł Spychalski](https://www.youtube.com/playlist?list=PLOUQ8o2_nCLloACrA6f1_daCjhqY2x0fB)
+
+## Contributing
+
+Contributions are welcome and encouraged.  You can contribute in many ways:
+
+* Documentation updates and corrections.
+* How-To guides - received help?  help others!
+* Bug fixes.
+* New features.
+* Telling us your ideas and suggestions.
+* Buying your hardware from this [link](https://inavflight.com/shop/u/bg/)
+
+A good place to start is Telegram channel or Facebook group. Drop in, say hi.
+
+Github issue tracker is a good place to search for existing issues or report a new bug/feature request:
+
+https://github.com/iNavFlight/inav/issues
+
+https://github.com/iNavFlight/inav-configurator/issues
+
+Before creating new issues please check to see if there is an existing one, search first otherwise you waste peoples time when they could be coding instead!
+
+## Developers
+
+Please refer to the development section in the [docs/development](https://github.com/iNavFlight/inav/tree/master/docs/development) folder.
+
+
+## INAV Releases
+https://github.com/iNavFlight/inav/releases
